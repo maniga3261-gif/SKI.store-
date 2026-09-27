@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SKI STORE | متجر سكي</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f3ef;
+      color: #171717;
+    }
+
+    /* الهيدر */
+    header {
+      background: #111111;
+      color: white;
+      padding: 22px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #cccccc;
+    }
+
+    /* المقدمة */
+    .hero {
+      text-align: center;
+      padding: 55px 20px 35px;
+    }
+
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    /* المنتجات */
+    .products {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .product img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-info h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 23px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .description {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 7px;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #111;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    /* الطلب */
+    .order {
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    }
+
+    .order h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .order input {
+      margin-bottom: 10px;
+    }
+
+    #message {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #eeeeee;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    /* الفوتر */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    /* للجوال */
+    @media (max-width: 700px) {
+
+      .products {
+        grid-template-columns: 1fr;
+        padding: 15px;
+      }
+
+      .product img {
+        height: 430px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <h1>SKI STORE</h1>
+    <p>ستايلك يبدأ من هنا</p>
+  </header>
+
+
+  <!-- المقدمة -->
+  <section class="hero">
+
+    <h2>تشكيلة SKI STORE</h2>
+
+    <p>
+      اختر التصميم الذي يناسبك
+    </p>
+
+  </section>
+
+
+  <!-- المنتجات -->
+  <section class="products">
+
+
+    <!-- كثبان -->
+    <div class="product">
+
+      <img src="kathban.jpg" alt="تيشيرت كثبان">
+
+      <div class="product-info">
+
+        <h3>كثبان 🤎</h3>
+
+        <div class="price">
+          390 DN
+        </div>
+
+        <p class="description">
+          تيشيرت بلون بني بتصميم شبابي مميز.
+        </p>
+
+        <label>
+          اختر المقاس
+        </label>
+
+        <select id="size-kathban">
+
+          <option value="">اختر المقاس</option>
+
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+          <option>XXXL</option>
+
+        </select>
+
+        <button
+          onclick="chooseProduct('كثبان 🤎', 'size-kathban')">
+
+          اطلب الآن
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- نجوم -->
+    <div class="product">
+
+      <img src="nojoom.jpg" alt="تيشيرت نجوم">
+
+      <div class="product-info">
+
+        <h3>نجوم 🖤</h3>
+
+        <div class="price">
+          390 DN
+        </div>
+
+        <p class="description">
+          تيشيرت أسود بتصميم النجوم المميز على الظهر.
+        </p>
+
+        <label>
+          اختر المقاس
+        </label>
+
+        <select id="size-nojoom">
+
+          <option value="">اختر المقاس</option>
+
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+          <option>XXXL</option>
+
+        </select>
+
+        <button
+          onclick="chooseProduct('نجوم 🖤', 'size-nojoom')">
+
+          اطلب الآن
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- نموذج الطلب -->
+  <section class="order">
+
+    <h2>
+      إتمام الطلب 🛒
+    </h2>
+
+
+    <label>
+      المنتج
+    </label>
+
+    <input
+      id="selected-product"
+      readonly
+      placeholder="اختر المنتج أولاً">
+
+
+    <label>
+      المقاس
+    </label>
+
+    <input
+      id="selected-size"
+      readonly
+      placeholder="اختر المقاس">
+
+
+    <label>
+      الاسم
+    </label>
+
+    <input
+      id="customer-name"
+      type="text"
+      placeholder="اكتب اسمك">
+
+
+    <label>
+      رقم الهاتف
+    </label>
+
+    <input
+      id="customer-phone"
+      type="tel"
+      placeholder="اكتب رقم الهاتف">
+
+
+    <label>
+      عنوان التوصيل
+    </label>
+
+    <input
+      id="customer-address"
+      type="text"
+      placeholder="اكتب عنوان التوصيل">
+
+
+    <button onclick="sendOrder()">
+
+      إرسال الطلب
+
+    </button>
+
+
+    <div id="message"></div>
+
+  </section>
+
+
+
+  <!-- الفوتر -->
+  <footer>
+
+    SKI STORE © 2026
+
+  </footer>
+
+
+
+  <script>
+
+    /*
+      اختيار المنتج والمقاس
+    */
+
+    function chooseProduct(product, sizeId) {
+
+      const size =
+        document.getElementById(sizeId).value;
+
+      if (size === "") {
+
+        alert("الرجاء اختيار المقاس أولاً");
+
+        return;
+      }
+
+      document.getElementById(
+        "selected-product"
+      ).value = product;
+
+
+      document.getElementById(
+        "selected-size"
+      ).value = size;
+
+
+      document
+        .querySelector(".order")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+
+    /*
+      إرسال الطلب
+    */
+
+    function sendOrder() {
+
+      const product =
+        document.getElementById(
+          "selected-product"
+        ).value;
+
+
+      const size =
+        document.getElementById(
+          "selected-size"
+        ).value;
+
+
+      const name =
+        document.getElementById(
+          "customer-name"
+        ).value.trim();
+
+
+      const phone =
+        document.getElementById(
+          "customer-phone"
+        ).value.trim();
+
+
+      const address =
+        document.getElementById(
+          "customer-address"
+        ).value.trim();
+
+
+      const message =
+        document.getElementById(
+          "message"
+        );
+
+
+      if (
+        product === "" ||
+        size === "" ||
+        name === "" ||
+        phone === "" ||
+        address === ""
+      ) {
+
+        message.style.display = "block";
+
+        message.innerHTML =
+          "⚠️ الرجاء تعبئة جميع البيانات.";
+
+        return;
+
+      }
+
+
+      message.style.display = "block";
+
+
+      message.innerHTML =
+
+        "✅ تم تجهيز طلبك بنجاح!" +
+
+        "<br><br>" +
+
+        "المنتج: " +
+        product +
+
+        "<br>" +
+
+        "المقاس: " +
+        size +
+
+        "<br>" +
+
+        "السعر: 390 DN" +
+
+        "<br>" +
+
+        "الاسم: " +
+        name +
+
+        "<br>" +
+
+        "رقم الهاتف: " +
+        phone +
+
+        "<br>" +
+
+        "العنوان: " +
+        address +
+
+        "<br><br>" +
+
+        "سنتواصل معك لتأكيد الطلب.";
+
+    }
+
+  </script>
+
+</body>
+</html>
